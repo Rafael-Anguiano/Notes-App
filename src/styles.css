@@ -1,0 +1,98 @@
+html, body, #root {
+    margin:0;
+}
+
+.header {
+    background: linear-gradient(45deg, #6498e6 20%, #9b21ff);
+    color:khaki;
+    height:5vh
+}
+
+h1 {
+    margin-block: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar {
+    width: 20%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.editor {
+    width: 80%;
+    height: 95vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.list-element {
+    width:90%;
+    padding-block: 1rem;
+    margin: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #8585ff;
+    background:#8585ff9c;
+    color: #2d3bff
+}
+
+.note-title {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.75rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rebeccapurple;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.note-description{
+    width: 95%;
+    height: 95%;
+    padding: 1rem;
+    margin: 0.75rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rebeccapurple;
+    color: black;
+}
+
+.note-description:focus, .note-title:focus {
+    outline: none;
+    border-color: #719ECE;
+}
+
+.note-save {
+    padding: 1rem;
+    padding-inline: 2rem;
+    margin: 0.75rem;
+    border-radius: 1rem;
+    border: 1px solid #8585ff;
+    background:#8585ff9c;
+    color: #2d3bff;
+    width: fit-content;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+}
