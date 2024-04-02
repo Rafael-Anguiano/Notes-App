@@ -1,19 +1,33 @@
+:root {
+    color-scheme: light dark;
+}
+
 html,
 body,
-#root {
+:root {
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background: white;
 }
 
 .header {
     background: #0c3a63;
     width: 100vw;
     margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title {
     margin-block: 0;
     color: white;
-    margin: 1rem;
+    margin-left: 1rem;
     font-size: 2.2rem;
     font-family: 'Shadows Into Light', cursive;
     width: fit-content;
@@ -25,84 +39,223 @@ body,
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.sidebar {
-    width: 20%;
-    height: 95vh;
+.note {
+    width: 300px;
+    min-width: 200px;
+    margin: 2rem;
+    padding: 2rem;
+    height: 300px;
+    color: black;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.editor {
-    width: 80%;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.list-element {
-    width: 90%;
-    padding-block: 1rem;
-    margin: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid #8585ff;
-    background: #eff0f1;
-    color: #2d3bff;
+    justify-content: space-between;
 }
 
 .note-title {
-    width: 100%;
-    padding: 1rem;
-    margin: 0.75rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid rebeccapurple;
-    color: black;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 1.1rem;
-    background: #eff0f1;
+    margin-block: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .note-description {
-    width: 95%;
-    height: 95%;
-    padding: 1rem;
-    margin: 0.75rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid rebeccapurple;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-wrap: pretty;
+    height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    scrollbar-width: thin;
+    scrollbar-color: red;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: gray;
+    background: none;
+    border: none;
+    margin-left: 1rem;
+}
+
+.note-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-date {
+    color: gray;
+}
+
+button {
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+button:hover {
+    filter: brightness(90%);
+    background: opacity(0.5);
     color: black;
-    background: #eff0f1;
 }
 
-.note-description:focus,
-.note-title:focus {
-    outline: none;
-    border-color: #719ece;
-}
-
-.note-save {
-    padding: 1rem;
-    padding-inline: 2rem;
-    margin: 0.75rem;
-    border-radius: 1rem;
-    border: 1px solid #8585ff;
-    background: #8585ff9c;
-    color: #2d3bff;
+.add-button {
+    border: none;
+    padding: 0.7rem;
+    padding-inline: 1rem;
+    margin-right: 1rem;
+    height: fit-content;
     width: fit-content;
+    background: #eff0f1;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 0.5rem;
+    color: gray;
 }
 
-.row {
+.add-button:hover {
+    filter: brightness(90%);
+    background: opacity(0.5);
+    color: gray;
+}
+
+.add-button .material-symbols-outlined {
+    margin-left: 0;
+}
+
+.full-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #00000080;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    width: 300px;
+    height: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.editor-title {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #8080805f;
+    /* color: black; */
+    outline: none;
+    width: 100%;
+}
+
+.editor-description {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.2rem;
+    text-wrap: pretty;
+    color: black;
+    background: #8080805f;
+    height: 100%;
+    outline: none;
+    width: 100%;
+    scrollbar-width: thin;
+}
+
+.save-button {
+    border: none;
+    padding: 0.7rem;
+    padding-inline: 1.2rem;
+    margin-left: 0;
+    height: fit-content;
+    width: 100%;
+    background: #fc9a10;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: black;
+    font-weight: bold;
+}
+.save-button .material-symbols-outlined {
+    margin-left: 0;
+    color: black;
+}
+
+.save-button:hover {
+    filter: brightness(90%);
+    background: opacity(0.5);
+    color: gray;
+}
+
+.colors {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+    gap: 0.2rem;
+}
+
+.color-button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.ticket {
+    width: 500px;
+    height: 500px;
+    padding: 2rem;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.ticket-title {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-block: 0;
+    max-height: 3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ticket-description {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-optical-sizing: auto;
+    font-size: 1.2rem;
+    font-style: normal;
+    text-wrap: pretty;
+    height: 390px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
