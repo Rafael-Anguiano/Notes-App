@@ -3,20 +3,25 @@ import Editor from './Editor.jsx';
 
 function App() {
     const [list, setList] = useState(
-        JSON.parse(localStorage.getItem('list')) && []
+        JSON.parse(localStorage.getItem('list')) || []
     );
+
     const [showEditor, setShowEditor] = useState(true);
     const [activeItem, setActiveItem] = useState({});
 
     const handleSubmit = (valor) => {
         setList([...list, valor]);
+        localStorage.setItem(
+            'list',
+            JSON.stringify([...JSON.parse(localStorage.getItem('list')), valor])
+        );
     };
 
     return (
         <>
-            <header className='header'>
-                <h1>Notes</h1>
-            </header>
+            <div className='header'>
+                <span className='title'>Notes</span>
+            </div>
             <div className='container'>
                 <section className='sidebar'>
                     {list.map((element, index) => (

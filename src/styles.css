@@ -1,15 +1,23 @@
-html, body, #root {
-    margin:0;
+html,
+body,
+#root {
+    margin: 0;
 }
 
 .header {
-    background: linear-gradient(45deg, #6498e6 20%, #9b21ff);
-    color:khaki;
-    height:5vh
+    background: #0c3a63;
+    width: 100vw;
+    margin-top: 0;
 }
 
-h1 {
+.title {
     margin-block: 0;
+    color: white;
+    margin: 1rem;
+    font-size: 2.2rem;
+    font-family: 'Shadows Into Light', cursive;
+    width: fit-content;
+    font-weight: bold;
 }
 
 .container {
@@ -33,20 +41,20 @@ h1 {
 .editor {
     width: 80%;
     height: 95vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .list-element {
-    width:90%;
+    width: 90%;
     padding-block: 1rem;
     margin: 0.75rem;
     border-radius: 0.5rem;
     border: 1px solid #8585ff;
-    background:#8585ff9c;
-    color: #2d3bff
+    background: #eff0f1;
+    color: #2d3bff;
 }
 
 .note-title {
@@ -59,9 +67,10 @@ h1 {
     color: black;
     font-weight: bold;
     font-size: 1.1rem;
+    background: #eff0f1;
 }
 
-.note-description{
+.note-description {
     width: 95%;
     height: 95%;
     padding: 1rem;
@@ -70,11 +79,13 @@ h1 {
     border-radius: 0.5rem;
     border: 2px solid rebeccapurple;
     color: black;
+    background: #eff0f1;
 }
 
-.note-description:focus, .note-title:focus {
+.note-description:focus,
+.note-title:focus {
     outline: none;
-    border-color: #719ECE;
+    border-color: #719ece;
 }
 
 .note-save {
@@ -83,10 +94,9 @@ h1 {
     margin: 0.75rem;
     border-radius: 1rem;
     border: 1px solid #8585ff;
-    background:#8585ff9c;
+    background: #8585ff9c;
     color: #2d3bff;
     width: fit-content;
-
 }
 
 .row {
@@ -94,5 +104,5 @@ h1 {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    width:100%;
+    width: 100%;
 }
